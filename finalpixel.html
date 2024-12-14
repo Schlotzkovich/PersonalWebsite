@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Walter</title>
+  <style>
+    body {
+      background-color: #241d28;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background-color: #2e2633;
+      color: #9f9f9f;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      transform: translateX(0);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+    .sidebar.hidden {
+      transform: translateX(-250px);
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .sidebar button {
+      background-color: #4a3c54;
+      color: #ffffff;
+      border: none;
+      padding: 10px 15px;
+      margin: 10px 0;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+    }
+
+    .sidebar button:hover {
+      background-color: #6c5979;
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      left: 10px;
+      background-color: #32cd32;
+      color: #ffffff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 1100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-btn:hover {
+      background-color: #28a428;
+    }
+
+    /* Main Content Wrapper */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-left: 250px;
+      padding: 20px;
+      transition: margin-left 0.3s ease-in-out;
+    }
+
+    .main-content.full-width {
+      margin-left: 0;
+    }
+
+    /* Main Content */
+    .content-area {
+      background-color: #302838;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      color: #9f9f9f;
+    }
+
+    a {
+      color: #6c9cdb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-content {
+        margin-left: 0;
+      }
+
+      .sidebar {
+        transform: translateX(-250px);
+      }
+
+      .sidebar.hidden {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Toggle Button -->
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Navigation</h2>
+    <button onclick="window.location.href='https://github.com/Schlotzkovich'">GitHub Profile</button>
+    <button onclick="window.location.href='aiart.html'">AI Art</button>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-content" id="main-content">
+    <!-- Content Area -->
+    <div class="content-area">
+      <!-- Page Header -->
+      <h1>Walter.</h1>
+
+      <!-- About Me Section -->
+      <div style="margin-top: 20px; line-height: 1.6;">
+        <p>
+          Hi there! I'm the Hardware Support Supervisor at Sullivan and Cromwell, where I thrive on solving problems and thinking outside the box. My role is more than just fixing issues—it’s about empowering productivity every day.
+        </p>
+        <p>
+          Outside of work, I dive deep into tech projects, whether building custom PCs, exploring blockchain and AI, or tinkering with software and hardware. Occasionally, I play video games to sharpen my problem-solving skills.
+        </p>
+        <p>
+          What drives me? A passion for learning and an unrelenting curiosity. While I didn’t follow a traditional educational path, my journey is defined by discovery and a drive to master the ever-changing world of technology.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const mainContent = document.getElementById('main-content');
+      sidebar.classList.toggle('hidden');
+      mainContent.classList.toggle('full-width');
+    }
+  </script>
+</body>
+</html>
