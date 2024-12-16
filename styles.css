@@ -1,0 +1,31 @@
+h1 {
+    color: #9f9f9f;
+    text-align: left;
+}
+
+h1 a {
+    color: #18a151;
+}
+
+a {
+    color:rgb(148, 44, 44);
+}
+
+.external {
+    color:plum;
+}
+
+div {
+    color: #b7b7b7;
+    font-weight: 600; 
+    line-height: 1.6; 
+    text-align: left;
+    margin-top: 40px;
+}
+
+body {
+    background-color: #3b4252;
+    margin: 0; 
+    padding: 20px; 
+    font-family: Arial, sans-serif;
+}
